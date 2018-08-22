@@ -1,11 +1,9 @@
 import {combineReducers} from 'redux'
+import authentication from "./authentication"
 
-const users = (state = { users: {}}, action)  => {
-    return state
-}
 
 const rootReducer = combineReducers({
-    users
+    authentication
 })
 
 export default rootReducer

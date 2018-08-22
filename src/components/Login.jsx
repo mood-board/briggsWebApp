@@ -1,25 +1,37 @@
 import React from 'react'
+import {bindActionCreators} from 'redux'  
+import {connect} from 'react-redux'
+import {login} from '../actions/auth'
+
+import * as authActions from "../actions/auth"
+
+class Login extends React.Component {
+    
+    onSubmit (event) {
+        event.preventDefault()
+        //TODO: Verify dirty data
+        this.props.actions.login(this.state)
+    }
+
+    onFieldChanged (event) {
+        this.setState({[event.target.name]: event.target.value})
+    }
+  
+    render () {
+      return (
+        <form onChange={this.onFieldChanged.bind(this)} onSubmit={this.onSubmit.bind(this)}>
+          <input placeholder="E-mail Address" type="email" name="email" />
+          <input placeholder="Password" type="password" name="password" />
+          <button type="submit">Sign In</button>
+        </form>
+      )
+    }
+  }
 
 
-const Login = () => {
-    return(
-        <section className="login-section">
-            <div className="login-form">
-                <form>
-                    <h2>Login Form</h2><hr />
-                    <div>
-                        <input type="text" name="email" placeholder="E-mail Address" />
-                    </div>
-
-                    <div>
-                        <input type="password" name="password" placeholder="Password" />
-                    </div>
-
-                    <button>Login</button>
-                </form>
-            </div>
-        </section>
-    )
+function mapDispatchToProps(dispatch) {  
+    return {
+      actions: bindActionCreators(authActions, dispatch)
+    };
 }
-
-export default Login
+export default connect(null, mapDispatchToProps)(Login)

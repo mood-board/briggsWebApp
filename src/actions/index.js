@@ -1,13 +1,15 @@
-//Actions are Object 
-// {
-//     type: THE_ACTION_TYPE,
-//     payload: payload
-// }
+import {LOGGED_IN, LOGIN_FAILED} from './actionTypes'
 
-//Action Creators are functions that return an Action
-function actionCreator(payload) {
+export const loggedIn = () => {
     return {
-        type: ACTION_TYPE,
-        payload: payload
+        type: LOGGED_IN,
+        isLoggedIn: true
+    }
+}
+
+export const loginFailure = () => {
+    return {
+        type: LOGIN_FAILED,
+        isLoggedIn: false
     }
 }

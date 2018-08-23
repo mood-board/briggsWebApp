@@ -1,7 +1,6 @@
 import initialState from "./initialState"
 import {LOGGED_IN, LOGIN_FAILED} from '../actions/actionTypes'
 
-
 const authentication = (state = initialState, action) => {
     switch (action.type){
       case LOGGED_IN:

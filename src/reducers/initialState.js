@@ -5,4 +5,4 @@ const initialState = {
     errorMessage: null
 }
 
-module.exports = initialState
+export default initialState

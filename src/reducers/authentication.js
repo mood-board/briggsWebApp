@@ -6,7 +6,7 @@ const authentication = (state = initialState, action) => {
       case LOGGED_IN:
         return Object.assign({}, state, { isLoggedIn: true, shouldRedirect: true })
       case LOGIN_FAILED:
-        return Object.assign({}, state, { isLoggedIn: false, shouldRedirect: false, errorMessage: action.error.message })
+        return Object.assign({}, state, { isLoggedIn: false, shouldRedirect: false })
     }
     return state
   }

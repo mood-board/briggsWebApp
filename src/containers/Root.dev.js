@@ -6,6 +6,7 @@ import { Router, Route } from 'react-router-dom'
 import Register from '../components/Register';
 import Login from '../components/Login';
 import history from '../history';
+import Settings from '../components/user/Settings';
 
 
 const Root = ({ store }) => (
@@ -15,6 +16,7 @@ const Root = ({ store }) => (
             <Route exact path="/" component={() => <h1>Number #1 Stock Photos Site</h1>} />
             <Route path="/auth/signup" component={Register} />
             <Route path="/auth/login" component={Login} />
+            <Route path="/accounts/settings" component={Settings} />
         <DevTools />
       </div>
     </Router>

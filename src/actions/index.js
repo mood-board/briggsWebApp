@@ -1,4 +1,4 @@
-import {LOGGED_IN, LOGIN_FAILED, REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAILURE} from './actionTypes'
+import {LOGGED_IN, LOGIN_FAILED, REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAILURE, STORE_USER} from './actionTypes'
 
 export const loggedIn = () => {
     return {

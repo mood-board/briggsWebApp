@@ -12,7 +12,6 @@ export function login (form) {
         dispatch(storeUser(response.data.user))
       })
       .then(() => dispatch(loggedIn()))
-
       .then(() => history.push("/")) //Redirect to homepage
       .catch(() => dispatch(loginFailure()))
 }
@@ -21,7 +20,10 @@ export function login (form) {
 
 export function register(credentials) {
   return dispatch => api.Register(credentials)
-    .then((response) => localStorage.setItem("token", response.data.token))
+    .then((response) => {
+      localStorage.setItem("token", response.data.token)
+      dispatch(storeUser(response.data.user))
+    })
     .then(() => dispatch(registerSuccess()))
     .catch(() => dispatch(registerFailure()))
 }

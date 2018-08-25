@@ -2,8 +2,7 @@
 const initialState = {
     isLoggedIn: false,
     shouldRedirect: false,
-    errorMessage: null,
-    user: {}
+    errorMessage: null
 }
 
 export default initialState

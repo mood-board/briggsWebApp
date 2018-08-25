@@ -7,7 +7,7 @@ import user from './user'
 const rootReducer = combineReducers({
     registration,
     authentication,
-    user
+    userProfile: user
 })
 
 export default rootReducer

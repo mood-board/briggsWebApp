@@ -1,7 +1,6 @@
-import initialState from './initialState'
 import { STORE_USER } from '../actions/actionTypes';
 
-const user = (state = initialState.user, action) => {
+const user = (state = {user: {} }, action) => {
     switch(action.type) {
         case STORE_USER:
             console.dir(action.user)

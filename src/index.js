@@ -8,6 +8,8 @@ import Root from './containers/Root'
 import configureStore from './store/configureStore'
 import {authenticateUser, fetchingUser, fetchingUserSuccess, fetchingUserFailure} from './redux/User'
 import api from './modules/api';
+import UserProfile from './modules/userProfile';
+
 
 const store = configureStore()
 
@@ -19,7 +21,9 @@ if(token) {
   var decoded = jwt_decode(token)
   api.GetUserById(decoded.id)
     .then((response) => {
-      store.dispatch(fetchingUserSuccess(response.data.user))
+      store.dispatch(fetchingUserSuccess(response.data.data))
+      console.dir(response.data.data)
+      return UserProfile.setUserData(response.data.data)
     })
     .catch((err) => store.dispatch(fetchingUserFailure(err)))
 }

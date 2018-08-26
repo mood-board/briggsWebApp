@@ -13,45 +13,33 @@ export const FETCHING_USER_SUCCESS = "FETCHING_USER_SUCCESS"
 
 
 //Actions creators
-export function authenticateUser(user) {
-    return {
-        type: AUTH_USER,
-        user
-    }
-}
+export const  authenticateUser = (user) => ({  
+	type: AUTH_USER,
+	user
+});
 
-export function authenticationError(error) {
-    return {
-        type: AUTH_ERROR,
-        error
-    }
-}
+export const authenticationError = (error) => ({
+	type: AUTH_ERROR,
+	error
+});
 
-export function fetchingUser() {
-    return {
-        type: FETCHING_USER
-    }
-}
+export const fetchingUser = () => ({ 
+  type: FETCHING_USER
+});
 
-export function fetchingUserFailure(error) {
-    return {
-        type: FETCHING_USER_FAILURE,
-        errot: 'Error fetching user'
-    }
-}
+export const fetchingUserFailure = (error) => ({  
+	type: FETCHING_USER_FAILURE,
+	error: 'Error fetching user'
+})
 
-export function fetchingUserSuccess(user) {
-    return {
-        type: FETCHING_USER_SUCCESS,
-        user
-    }
-}
+export const fetchingUserSuccess = (user) => ({
+	type: FETCHING_USER_SUCCESS,
+	user
+});
 
-export function unauthUser() {
-	return {
-		type: UNAUTH_USER
-	}
-}
+export const unauthUser = ()=>({
+	type: UNAUTH_USER
+});
 
 
 const initialState = fromJS({

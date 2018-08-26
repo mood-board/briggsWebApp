@@ -10,14 +10,10 @@ import "./Users.css"
 
 class Settings extends React.Component {
     render() {
-        if(!this.props.user && !localStorage.user_id) {
-            //TODO: Redirect out of there
-            return 
-        }
-
         return (
             <section className="user_settings">
-                <div className="personal_data">
+                <h1>Settings</h1>
+                {/* <div className="personal_data">
                     <h4>Personal data</h4><hr />
                     
                     <div>
@@ -74,9 +70,9 @@ class Settings extends React.Component {
                         </textarea>
                     </div>
 
-                </div>
+                </div> */}
 
-                <div className="other_profiles">
+                {/* <div className="other_profiles">
                     <h4>Online Profiles</h4><hr />
                     <div>
                         <label htmlFor="profile_facebook">Facebook</label>
@@ -100,7 +96,7 @@ class Settings extends React.Component {
                         <label>Email</label>
                         <input type="email" value={this.props.user.email} disabled />
                     </div>
-                </div>
+                </div> */}
 
                 <button>Save</button>
             </section>
@@ -108,10 +104,13 @@ class Settings extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    console.dir(state.userProfile)
+function mapStateToProps({user}){
+    //const [ ...keys ] = map.keys();
+
+    console.dir(user.get("authedUser").keys())
+
     return {
-        user : state.userProfile
+        user : user.get("authedUser")
     }
 }
 

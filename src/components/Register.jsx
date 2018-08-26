@@ -1,8 +1,8 @@
 import React from 'react'
 import {bindActionCreators} from 'redux'  
 import {connect} from 'react-redux'
+import * as usersActions from '../redux/User';
 
-import * as authActions from "../actions/auth"
 
 class Register extends React.Component {
     
@@ -73,7 +73,7 @@ class Register extends React.Component {
 
 function mapDispatchToProps(dispatch) {  
     return {
-      actions: bindActionCreators(authActions, dispatch)
+      actions: bindActionCreators(usersActions, dispatch)
     };
 }
 export default connect(null, mapDispatchToProps)(Register)

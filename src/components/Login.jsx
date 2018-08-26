@@ -1,15 +1,12 @@
 import React from 'react'
 import {bindActionCreators} from 'redux'  
 import {connect} from 'react-redux'
-import {login} from '../actions/auth'
-
-import * as authActions from "../actions/auth"
+import * as usersActions from '../redux/User';
 
 class Login extends React.Component {
     
     onSubmit (event) {
         event.preventDefault()
-        //TODO: Verify dirty data
         this.props.actions.login(this.state)
     }
 
@@ -17,7 +14,7 @@ class Login extends React.Component {
         this.setState({[event.target.name]: event.target.value})
     }
   
-    render () {
+    render () {``
       return (
         <form onChange={this.onFieldChanged.bind(this)} onSubmit={this.onSubmit.bind(this)}>
           <input placeholder="E-mail Address" type="email" name="email" />
@@ -28,10 +25,9 @@ class Login extends React.Component {
     }
   }
 
-
 function mapDispatchToProps(dispatch) {  
     return {
-      actions: bindActionCreators(authActions, dispatch)
+      actions: bindActionCreators(usersActions, dispatch)
     };
 }
 export default connect(null, mapDispatchToProps)(Login)

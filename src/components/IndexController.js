@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import NavBar from './NavBar'
 import {Link} from 'react-router-dom'
 import BrowseByCategory from './BrowseByCategory'
+import UploadListings from './UploadListings'
 
 
 
@@ -10,9 +11,8 @@ class IndexController extends Component {
         return (
             <main>
                 <NavBar />
-                {/* <UploadListing /> */}
-                <BrowseByCategory />
-                <Link to="/accounts/settings">Settings</Link>
+                <UploadListings />
+                {/* <BrowseByCategory /> */}
             </main>
         )
     }

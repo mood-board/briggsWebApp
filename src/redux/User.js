@@ -75,6 +75,7 @@ export default function usersReducer ( state = initialState, action) {
 		case FETCHING_USER_FAILURE:
 			return state.merge({
 				isFetching: false,
+				isAuthenticated: false,
 				error: action.error
 			});
 		

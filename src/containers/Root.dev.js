@@ -8,6 +8,7 @@ import Login from '../components/Login';
 import history from '../history';
 import Settings from '../components/user/Settings';
 import IndexController from '../components/IndexController';
+import PhotoUpload from '../components/PhotoUpload'
 
 
 const Root = ({ store }) => (
@@ -15,10 +16,11 @@ const Root = ({ store }) => (
     <Router history={history}>
       <div>
             <Route exact path="/" component={IndexController} />
+            <Route path="/uploads" component={PhotoUpload} />
             <Route path="/auth/signup" component={Register} />
             <Route path="/auth/login" component={Login} />
             <Route path="/accounts/settings" component={Settings} />
-        <DevTools />
+        {/* <DevTools /> */}
       </div>
     </Router>
   </Provider>

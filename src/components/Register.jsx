@@ -43,28 +43,39 @@ class Register extends React.Component {
     }
   
     render () {
-      return (
-        <form onChange={this.onFieldChanged.bind(this)} onSubmit={this.onSubmit.bind(this)}>
-          <div><input placeholder="First Name" type="text" name="first_name" /></div>
-          <div><input placeholder="Last Name" type="text" name="last_name" /></div>
-          <div><input placeholder="Username" type="text" name="username" /></div>
-          <div><input placeholder="Password" type="password" name="password" /></div>
-          <div><input placeholder="E-mail Address" type="email" name="email" /></div>
-          <div><input placeholder="City" type="text" name="city" /></div>
-          <div><input placeholder="Country" type="text" name="country" /></div>
-          <div>
-              <textarea name="about_me" cols="30" rows="10" defaultValue="About Me goes here..."></textarea>
+      return (  
+        <form className="font-sans text-sm rounded w-full max-w-md mx-auto my-8 px-8 pt-6 pb-8" onChange={this.onFieldChanged.bind(this)} onSubmit={this.onSubmit.bind(this)}>
+            <div className="relative border rounded mb-4 shadow appearance-none label-floating">
+                <input className="w-full py-2 px-3 text-grey-darker leading-normal rounded" name="first_name" type="text" placeholder="First Name" />
+            </div>
+            <div className="relative border rounded mb-4 shadow appearance-none label-floating">
+                <input className="w-full py-2 px-3 text-grey-darker leading-normal rounded" placeholder="Last Name" type="text" name="last_name" />
+            </div>
+            <div className="relative border rounded mb-4 shadow appearance-none label-floating">
+                <input className="w-full py-2 px-3 text-grey-darker leading-normal rounded" placeholder="Username" type="text" name="username" />
+            </div>
+            <div className="relative border rounded mb-4 shadow appearance-none label-floating">
+                <input className="w-full py-2 px-3 text-grey-darker leading-normal rounded" placeholder="Password" type="password" name="password" />
+            </div>
+          <div className="relative border rounded mb-4 shadow appearance-none label-floating">
+          <input className="w-full py-2 px-3 text-grey-darker leading-normal rounded" placeholder="E-mail Address" type="email" name="email" /></div>
+          <div className="relative border rounded mb-4 shadow appearance-none label-floating">
+          <input className="w-full py-2 px-3 text-grey-darker leading-normal rounded" placeholder="City" type="text" name="city" /></div>
+          <div className="relative border rounded mb-4 shadow appearance-none label-floating">
+          <input className="w-full py-2 px-3 text-grey-darker leading-normal rounded" placeholder="Country" type="text" name="country" /></div>
+          <div className="relative border rounded mb-4 shadow appearance-none label-floating">
+              <textarea className="w-full py-2 px-3 text-grey-darker leading-normal rounded" name="about_me" cols="30" rows="10" defaultValue="About Me goes here..."></textarea>
           </div>
 
           <div className="onlineProfiles">
             <h3>Online Profiles</h3> <hr/>
 
-            <div><input type="text" name="profile_facebook" placeholder="Facebook Profile" /></div>
-            <div><input type="text" name="profile_twitter" placeholder="Twitter Profile" /></div>
-            <div><input type="text" name="profile_instagram" placeholder="Instagram Profile"/></div>
-            <div><input type="text" name="profile_website" placeholder="Website URL" /></div>
+            <div className="relative border rounded mb-4 shadow appearance-none label-floating"><input className="w-full py-2 px-3 text-grey-darker leading-normal rounded" type="text" name="profile_facebook" placeholder="Facebook Profile" /></div>
+            <div className="relative border rounded mb-4 shadow appearance-none label-floating"><input className="w-full py-2 px-3 text-grey-darker leading-normal rounded" type="text" name="profile_twitter" placeholder="Twitter Profile" /></div>
+            <div className="relative border rounded mb-4 shadow appearance-none label-floating"><input className="w-full py-2 px-3 text-grey-darker leading-normal rounded" type="text" name="profile_instagram" placeholder="Instagram Profile"/></div>
+            <div className="relative border rounded mb-4 shadow appearance-none label-floating"><input className="w-full py-2 px-3 text-grey-darker leading-normal rounded" type="text" name="profile_website" placeholder="Website URL" /></div>
           </div>
-          <button type="submit">Sign In</button>
+          <button className="bg-black hover:bg-black text-white py-2 px-4" type="submit">Sign In</button>
         </form>
       )
     }

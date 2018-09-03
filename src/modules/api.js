@@ -7,7 +7,7 @@ let api = {
         return axios.post(`${API_URL}/users/authenticate/login`, form, { headers: {'Accept': 'application/json'} })
     },
     Register: (credentials) => {
-        return axios.post(`${API_URL}/users/authenticate/signup`, credentials, { headers: {'Accept': 'application/json'}})
+        return axios.post(`${API_URL}/users/authenticate/signup`, credentials, { headers: {'Accept': 'application/json'} })
     },
     GetUserById: (user_id) => {
         return axios.get(`${API_URL}/users/id/${user_id}`)

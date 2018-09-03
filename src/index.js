@@ -22,7 +22,6 @@ if(token) {
   api.GetUserById(decoded.id)
     .then((response) => {
       store.dispatch(fetchingUserSuccess(response.data.data))
-      console.dir(response.data.data)
       return UserProfile.setUserData(response.data.data)
     })
     .catch((err) => store.dispatch(fetchingUserFailure(err)))

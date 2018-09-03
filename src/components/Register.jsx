@@ -5,6 +5,17 @@ import * as usersActions from '../redux/User';
 
 
 class Register extends React.Component {
+    state = {
+        selectedFile: null
+    }
+
+    fileSelectedHandler = event => { 
+        console.dir(event.target.files[0]);
+        this.setState({
+            selectedFile: event.target.files[0]
+        });
+    }
+
     
     onSubmit (event) {
         event.preventDefault()
@@ -34,8 +45,7 @@ class Register extends React.Component {
             }
         }
 
-        this.props.actions.register(form)
-        
+        this.props.actions.register(form);
     }
 
     onFieldChanged (event) {
@@ -54,6 +64,7 @@ class Register extends React.Component {
             <div className="relative border rounded mb-4 shadow appearance-none label-floating">
                 <input className="w-full py-2 px-3 text-grey-darker leading-normal rounded" placeholder="Username" type="text" name="username" />
             </div>
+
             <div className="relative border rounded mb-4 shadow appearance-none label-floating">
                 <input className="w-full py-2 px-3 text-grey-darker leading-normal rounded" placeholder="Password" type="password" name="password" />
             </div>
@@ -75,7 +86,7 @@ class Register extends React.Component {
             <div className="relative border rounded mb-4 shadow appearance-none label-floating"><input className="w-full py-2 px-3 text-grey-darker leading-normal rounded" type="text" name="profile_instagram" placeholder="Instagram Profile"/></div>
             <div className="relative border rounded mb-4 shadow appearance-none label-floating"><input className="w-full py-2 px-3 text-grey-darker leading-normal rounded" type="text" name="profile_website" placeholder="Website URL" /></div>
           </div>
-          <button className="bg-black hover:bg-black text-white py-2 px-4" type="submit">Sign In</button>
+          <button className="bg-black hover:bg-black text-white py-2 px-4" type="submit">Sign Up</button>
         </form>
       )
     }

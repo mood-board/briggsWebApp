@@ -9,6 +9,7 @@ import history from '../history';
 import Settings from '../components/user/Settings';
 import IndexController from '../components/IndexController';
 import PhotoUpload from '../components/PhotoUpload'
+import MyImages from '../components/MyImages';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
@@ -27,6 +28,7 @@ const Root = ({ store }) => (
         <PrivateRoute path="/uploads" component={PhotoUpload} />
         <Route path="/auth/signup" component={Register} />
         <Route path="/auth/login" component={Login} />
+        <PrivateRoute path="/account/media" component={MyImages} />
         <PrivateRoute path="/accounts/settings" component={Settings} />
         <DevTools />
       </div>

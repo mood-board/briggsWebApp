@@ -53,7 +53,7 @@ export default class PhotoUpload extends React.Component {
                         </div>
                     )}
                     <div className="relative border rounded mb-4 shadow appearance-none label-floating">
-                        <label for="file">Filenames:</label>
+                        <label htmlFor="file">Filenames:</label>
                         <input 
                             style={{display: 'none'}} 
                             ref={fileInput => this.fileInput = fileInput} 

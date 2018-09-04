@@ -28,7 +28,7 @@ const Root = ({ store }) => (
         <PrivateRoute path="/uploads" component={PhotoUpload} />
         <Route path="/auth/signup" component={Register} />
         <Route path="/auth/login" component={Login} />
-        <PrivateRoute path="/account/media" component={MyImages} />
+        <PrivateRoute path="/accounts/media" component={MyImages} />
         <PrivateRoute path="/accounts/settings" component={Settings} />
         <DevTools />
       </div>

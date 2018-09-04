@@ -23,7 +23,8 @@ class UploadListings extends React.Component {
                                 <div key={item.largeImageURL} className="item-wrap" style={{width: "155px"}}>
                                     <div className="item-container">
                                         <div className="infinite-list-item grid-item stockfood" style={{height: "241px"}}>
-                                            <span><a href="#" style={{backgroundImage: `url(${item.largeImageURL})`}}></a></span>
+                                            {/* <span><a href="#" style={{backgroundImage: `url(${item.largeImageURL})`}}></a></span> */}
+                                            <span><a href="#" style={{backgroundImage: "url(https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)"}}></a></span>
                                             <div className="source"><i className="source-stockfood"></i></div>
                                             <div className="lightbox-manager">
                                                 <div className="basic-button"><button>Login to save image</button></div>

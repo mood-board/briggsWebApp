@@ -17,10 +17,6 @@ class MyImages extends React.Component {
         axios.get(URL).then((item) => this.setState({myImages: item.data.data}))
     }
     render() {
-
-        if(!this.state.myImages) {
-            return <div>Loaading...</div>
-        }
         const hasUploads = !this.state.myImages || this.state.myImages.length === 0;
 
         return(
@@ -34,9 +30,9 @@ class MyImages extends React.Component {
                                 <p>Increase your presence by uploading images <Link to="/uploads">here</Link></p>
                             </div>
                         ) : (
-                            <div>
+                            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)"}}>
                                 {this.state.myImages.map((item) => 
-                                <div key={item.upload_url} className="item-wrap" style={{width: "250px"}}>
+                                <div key={item.upload_url} className="item-wrap">
                                     <div className="item-container">
                                         <div className="infinite-list-item grid-item stockfood" style={{height: "250px"}}>
                                             <span><a href="#" style={{backgroundImage: `url(${item.upload_url})`}}></a></span>

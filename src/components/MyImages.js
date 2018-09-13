@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-import UserProfile from '../modules/userProfile';
 import {Link} from 'react-router-dom'
 
 class MyImages extends React.Component {

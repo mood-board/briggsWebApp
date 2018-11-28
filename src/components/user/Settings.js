@@ -3,19 +3,13 @@ import { connect } from "react-redux"
 
 import "./Users.css"
 
-
-//TODO:
-//Get the User details from the store and populate it on this form
-
-
 class Settings extends React.Component {
     constructor(){
         super();
         this.onFieldChange = this.onFieldChange.bind(this)
         this.onSubmit = this.onFieldChange.bind(this)
     }
-
-
+    
     onFieldChange (event) {
         this.setState({[event.target.name]: event.target.value})
     }
